@@ -37,6 +37,16 @@ The brand has customer purchase data but lacks structured intelligence about:
 - **Power BI**
 - **Jupyter Notebook**
 
+## Project Workflow
+
+Raw Dataset
+→ Data Cleaning (Python)
+→ Feature Engineering
+→ SQL Business Analysis
+→ CSV Outputs
+→ Power BI Dashboard
+→ Business Recommendations
+
 ## Dataset
 
 The dataset contains customer-level transactional and behavioral information such as:
@@ -66,15 +76,6 @@ New customer-level features were created to support business decision-making:
 
 Since the dataset does not contain churn labels, loyalty scores, or timestamps, loyalty and retention were defined using available behavioral variables.
 
-## Project Workflow
-
-Raw Dataset
-→ Data Cleaning (Python)
-→ Feature Engineering
-→ SQL Business Analysis
-→ CSV Outputs
-→ Power BI Dashboard
-→ Business Recommendations
 
 ## SQL Analysis
 
