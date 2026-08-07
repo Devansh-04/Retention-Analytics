@@ -6,6 +6,13 @@ This project analyzes customer transaction and behavior data for a direct-to-con
 
 The project follows the problem statement: **Decoding Customer Value: A SQL-Driven Retention Strategy**, where the core business question is whether the brand is building a loyal customer base or depending too heavily on promotions.
 
+## Highlights
+
+- End-to-end analytics pipeline using Python, SQL, and Power BI
+- Customer segmentation using business rules and machine learning
+- Interactive Power BI dashboard for business decision-making
+- Six SQL analysis modules covering customer value, geography, segmentation, and behavioral analytics
+
 ## Business Problem
 
 The brand has customer purchase data but lacks structured intelligence about:
@@ -20,8 +27,15 @@ The brand has customer purchase data but lacks structured intelligence about:
 
 - **Python**: Data cleaning and feature engineering
 - **SQL**: Customer segmentation and business analysis
-- **Power BI**: Founder dashboard and visual insights
+- **Power BI**: Interactive business intelligence dashboard
 - **Excel/CSV**: Data storage and query outputs
+
+## Tech Stack
+
+- **Python** (Pandas, NumPy)
+- **SQL** (MySQL)
+- **Power BI**
+- **Jupyter Notebook**
 
 ## Dataset
 
@@ -48,9 +62,19 @@ New customer-level features were created to support business decision-making:
 - **Value Tier**: Classifies customers into Low, Mid, High, and Premium value groups
 - **Promo Dependency Score**: Measures how dependent a customer is on discounts or promo codes
 - **Satisfaction Flag**: Identifies customers with strong review ratings
-- **Retention Proxy**: Uses previous purchase behavior as a proxy for customer retention
+- **Retention Score**: A behavioral proxy derived from previous purchases to estimate customer    retention in the absence of explicit churn labels.
 
 Since the dataset does not contain churn labels, loyalty scores, or timestamps, loyalty and retention were defined using available behavioral variables.
+
+## Project Workflow
+
+Raw Dataset
+→ Data Cleaning (Python)
+→ Feature Engineering
+→ SQL Business Analysis
+→ CSV Outputs
+→ Power BI Dashboard
+→ Business Recommendations
 
 ## SQL Analysis
 
@@ -63,6 +87,7 @@ SQL queries were used to answer key business questions:
 5. What does the ideal customer profile look like?
 
 ## Power BI Dashboard
+![Dashboard](dashboard/dashboard_preview.png)
 
 A four-panel founder dashboard was created with:
 
@@ -123,33 +148,49 @@ The brand should shift from broad discounting to segment-based promotional contr
 ## Project Structure
 
 ```text
-CUSTOMER RETENTION/
+CUSTOMER_RETENTION/
 │
 ├── dashboard/
 │   ├── dashboard.pbix
 │   └── powerbi_dashboard.png
 │
 ├── data/
-│   ├── processed/
-│   └── raw/
+│   ├── raw/
+│   └── processed/
 │
 ├── notebooks/
-│   ├── .ipynb_checkpoints/
-│   ├── customer_segmentation.ipynb
-│   ├── data_cleaning.ipynb
-│   └── feature_engineering.ipynb
+│   ├── 01_data_cleaning.ipynb
+│   ├── 02_feature_engineering.ipynb
+│   └── 03_customer_segmentation.ipynb
+│
+├── outputs/
+│   ├── category_analysis.csv
+│   ├── customer_pyramid.csv
+│   ├── customer_segment.csv
+│   ├── customer_segment_comparison.csv
+│   ├── geo_analysis.csv
+│   └── ideal_customer_profile.csv
 │
 ├── reports/
-│   ├── executive_summary.md
+│   ├── business_summary.md
 │   └── retention_playbook.md
 │
 ├── sql/
-│   ├── sql_category_funnel.csv
-│   ├── sql_customer_pyramid.csv
-│   ├── sql_geo_opportunity.csv
-│   ├── sql_ideal_customer_profile.csv
-│   ├── sql_promo_dependency.csv
-│   └── sql_segment_comparison.csv
+│   ├── 01_customer_value_pyramid.sql
+│   ├── 02_category_analysis.sql
+│   ├── 03_geographical_analysis.sql
+│   ├── 04_ideal_customer_profile.sql
+│   ├── 05_customer_segment_analysis.sql
+│   └── 06_customer_segment_comparison.sql
 │
-└── readme.md
+├── requirements.txt
+├── .gitignore
+└── README.md
 ```
+
+## Future Improvements
+
+- Incorporate transaction timestamps to perform cohort and time-series retention analysis.
+- Replace proxy retention metrics with true churn labels.
+- Deploy the dashboard using Power BI Service.
+- Automate the SQL analysis pipeline with scheduled refreshes.
