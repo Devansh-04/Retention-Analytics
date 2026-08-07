@@ -17,11 +17,11 @@ The project follows the problem statement: **Decoding Customer Value: A SQL-Driv
 
 The brand has customer purchase data but lacks structured intelligence about:
 
-- Who its most valuable customers are?
-- Which customers are loyal versus discount-dependent?
-- Which product categories drive repeat purchases?
-- Which geographies show strong organic demand?
-- How promotions should be redesigned to protect margins?
+- Who its most valuable customers are
+- Which customers are loyal versus discount-dependent
+- Which product categories drive repeat purchases
+- Which geographies show strong organic demand
+- How promotions should be redesigned to protect margins
 
 ## Tools Used
 
