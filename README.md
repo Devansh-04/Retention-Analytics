@@ -195,3 +195,9 @@ CUSTOMER_RETENTION/
 - Replace proxy retention metrics with true churn labels.
 - Deploy the dashboard using Power BI Service.
 - Automate the SQL analysis pipeline with scheduled refreshes.
+
+---
+
+## Author
+
+**Devansh Singh** 
