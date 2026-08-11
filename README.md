@@ -198,6 +198,11 @@ CUSTOMER_RETENTION/
 
 ---
 
-## Author
+## 🧑‍💻 Author
 
-**Devansh Singh** 
+**Devansh Singh**
+
+B.Tech Biotechnology at
+Indian Institute of Technology Guwahati
+
+---
