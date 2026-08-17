@@ -236,7 +236,7 @@ The deployed API allows users to interact with the customer segmentation model t
 
 ## Production Workflow
 
-The project now supports both analytical and production workflows:
+The project supports both analytical and production workflows:
 
 ```text
 Raw Dataset
