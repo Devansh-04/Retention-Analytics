@@ -189,6 +189,109 @@ CUSTOMER_RETENTION/
 └── README.md
 ```
 
+## API Deployment
+
+The customer segmentation model was converted into a production-ready FastAPI application for real-time customer segment prediction.
+
+The API accepts customer transaction and behavioral information and returns:
+
+- **Customer Cluster**
+- **Customer Segment**
+- **Retention Level**
+- **Business Recommendation**
+
+The API was validated against the original customer segmentation notebook using multiple existing customers to ensure that the production preprocessing and model predictions remained consistent with the original analysis.
+
+### API Endpoints
+
+- **GET /**: Checks whether the Customer Retention API is running
+- **GET /health**: Health check endpoint
+- **POST /predict**: Predicts the customer segment and provides retention insights and a business recommendation
+
+### Example Prediction
+
+```json
+{
+  "age": 55,
+  "purchase_amount": 53,
+  "review_rating": 3.1,
+  "previous_purchases": 14,
+  "frequency_of_purchases": "Fortnightly",
+  "discount_applied": "Yes",
+  "promo_code_used": "Yes",
+  "subscription_status": "Yes"
+}
+```
+
+The API returns the predicted customer cluster and segment along with retention-level and business recommendations.
+
+### Deployment
+
+The FastAPI application is deployed using **Render** and the source code is maintained on **GitHub**.
+
+- **Live API:** https://retention-analytics-mqid.onrender.com
+- **Interactive API Documentation:** https://retention-analytics-mqid.onrender.com/docs
+
+The deployed API allows users to interact with the customer segmentation model through the browser using FastAPI's Swagger interface.
+
+## Production Workflow
+
+The project now supports both analytical and production workflows:
+
+```text
+Raw Dataset
+→ Data Cleaning (Python)
+→ Feature Engineering
+→ SQL Business Analysis
+→ Customer Segmentation
+→ Power BI Dashboard
+→ FastAPI Prediction API
+→ Render Deployment
+→ Business Recommendations
+```
+
+## API Project Structure
+
+```text
+CUSTOMER_RETENTION/
+│
+├── dashboard/
+│   ├── dashboard.pbix
+│   └── powerbi_dashboard.png
+│
+├── data/
+│   ├── raw/
+│   └── processed/
+│
+├── notebooks/
+│   ├── 01_data_cleaning.ipynb
+│   ├── 02_feature_engineering.ipynb
+│   └── 03_customer_segmentation.ipynb
+│
+├── outputs/
+│
+├── reports/
+│
+├── sql/
+│
+├── src/
+│   ├── __init__.py
+│   ├── app.py
+│   ├── preprocessing.py
+│   ├── train.py
+│   ├── recommendations.py
+│   └── artifacts/
+│       ├── kmeans.pkl
+│       ├── scaler.pkl
+│       └── reference_data.pkl
+│
+├── requirements.txt
+├── .gitignore
+└── README.md
+```
+
+The `notebooks/` directory contains the exploratory and analytical workflow, while the `src/` directory contains the reusable production code used by the deployed API.
+
 ## Future Improvements
 
 - Incorporate transaction timestamps to perform cohort and time-series retention analysis.
